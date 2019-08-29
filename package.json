@@ -1,0 +1,26 @@
+{
+  "name": "simple-api",
+  "version": "1.0.0",
+  "description": "just a simple API",
+  "main": "index.js",
+  "author": "hengky.anang.wijaya@gmail.com",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "eslint": "^6.2.2",
+    "express": "^4.16.3",
+    "helmet": "^3.12.1",
+    "mongoose": "^5.2.3",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
+  }
+}
