@@ -1,9 +1,9 @@
 {
-  "name": "simple-api",
+  "name": "vehicl-api",
   "version": "1.0.0",
   "description": "just a simple API",
   "main": "index.js",
-  "author": "hengky.anang.wijaya@gmail.com",
+  "author": "florian.schildwaechter@gmail.com",
   "license": "MIT",
   "private": false,
   "scripts": {
