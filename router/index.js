@@ -19,4 +19,6 @@ module.exports = app => {
   app.get("/pages/:id", PageController.findOne)
 
   app.put("/pages/:id/update", PageController.update)
+
+  app.delete("/pages/:id/delete", PageController.destroy)
 }
