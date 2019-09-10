@@ -3,11 +3,10 @@ const { Page } = require("../model")
 module.exports = {
   create: async (req, res, next) => {
     try {
-      const { page } = req.body
-
+      const page = req.body
       //Create new page
       const newPage = await new Page(page).save()
-
+      console.log(newPage)
       //Send the response
       res.send({
         data: {
@@ -70,11 +69,12 @@ module.exports = {
   update: async (req, res, next) => {
     try {
       const { id } = req.params
-      const { page } = req.body
+      const page = req.body
 
+      console.log({...page})
       //Find a page by Id and update
       const thePage = await Page.findByIdAndUpdate(id, { ...page })
-
+      console.log(thePage)
       //Send the response
       res.send({
         data: {

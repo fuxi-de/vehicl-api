@@ -13,4 +13,10 @@ module.exports = app => {
   app.delete("/posts/:id/delete", PostController.destroy)
 
   app.get("/pages", PageController.find)
+
+  app.post("/pages/create", PageController.create)
+
+  app.get("/pages/:id", PageController.findOne)
+
+  app.put("/pages/:id/update", PageController.update)
 }
