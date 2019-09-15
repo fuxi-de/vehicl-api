@@ -29,9 +29,7 @@ module.exports = {
 
       //Send the response
       res.send({
-        data: {
-          pages: pages
-        },
+        pages: pages,
         status: {
           code: 200,
           message: "Operation handle correctly",
