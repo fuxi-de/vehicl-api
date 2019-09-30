@@ -1,9 +1,9 @@
 # simple-api
-A simple CRUD backend using node js and mongodb
+Basic CRUD backend using node js and mongodb
 
-Install all dependecies by doing this
+Install all dependecies via:
 ```
-yarn install
+npm i
 ```
 
 Install mongodb
@@ -23,5 +23,5 @@ db.createUser({
 
 Run in development mode
 ```
-yarn dev
+npm run dev
 ```
