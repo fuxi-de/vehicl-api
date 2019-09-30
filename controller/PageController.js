@@ -25,7 +25,7 @@ module.exports = {
   },
   find: async (req, res, next) => {
     try {
-      const pages = await Page.getAll()
+      const pages = await Page.find({})
 
       //Send the response
       res.send({
@@ -69,7 +69,7 @@ module.exports = {
       const { id } = req.params
       const page = req.body
 
-      console.log({...page})
+      console.log({ ...page })
       //Find a page by Id and update
       const thePage = await Page.findByIdAndUpdate(id, { ...page })
       console.log(thePage)
