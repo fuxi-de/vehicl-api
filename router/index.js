@@ -1,4 +1,15 @@
-const { PostController, PageController } = require("../controller")
+const { PostController, PageController, } = require("../controller")
+const multer = require("multer")
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads")
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + "-" + Date.now())
+  },
+})
+
+const upload = multer({ storage: storage, })
 
 module.exports = app => {
   // Create a Post
@@ -21,4 +32,15 @@ module.exports = app => {
   app.put("/pages/:id/update", PageController.update)
 
   app.delete("/pages/:id/delete", PageController.destroy)
+
+  app.post("/uploadfile", upload.single("myFile"), (req, res, next) => {
+    const file = req.file
+    if (!file) {
+      const error = new Error("Please upload a file")
+      error.httpStatusCode = 400
+      return next(error)
+    }
+    res.send(file)
+
+  })
 }

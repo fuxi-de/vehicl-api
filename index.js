@@ -18,7 +18,7 @@ const app = express()
 mongoose.connect(config.MONGO_URI, {
   user: config.MONGO_USER,
   pass: config.MONGO_PASS,
-  useNewUrlParser: true
+  useNewUrlParser: true,
 })
 
 //Secure Express Apps
@@ -27,7 +27,7 @@ app.use(helmet())
 //CORS Options
 const corsOptions = {
   origin: true,
-  credentials: true
+  credentials: true,
 }
 
 app.use(cors(corsOptions))

@@ -3,5 +3,5 @@ const PageController = require("./PageController")
 
 module.exports = {
   PostController,
-  PageController
+  PageController,
 }
