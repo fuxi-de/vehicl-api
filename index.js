@@ -8,8 +8,10 @@ const helmet = require("helmet")
 //import config
 const config = require("./config")
 
+
+
 //import router
-const Router = require("./router")
+const Router = require("./routes")
 
 //create app using express
 const app = express()
@@ -38,8 +40,7 @@ app.use(bodyParser.json())
 //HTTP request logger with Morgan
 app.use(morgan("dev"))
 
-//Router
-Router(app)
+app.use(Router);
 
 //Listen server to the specific PORT
 app.listen(config.PORT, () => {
