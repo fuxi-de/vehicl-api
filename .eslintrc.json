@@ -20,7 +20,7 @@
     ],
     "quotes": [
       "error",
-      "double"
+      "single"
     ],
     // override default options for rules from base configurations
     "comma-dangle": [
