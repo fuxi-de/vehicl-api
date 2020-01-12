@@ -45,10 +45,10 @@ module.exports = {
       if (!user.password) {
         throw new ErrorHandler(422, 'Missing required password field')
       }
-      passport.authenticate('local', { session: false, }, (err, passportUser, info) => {
+      await passport.authenticate('local', { session: false, }, (err, passportUser, info) => {
 
         if (err) {
-          throw new ErrorHandler(500, 'something went wrong')
+          throw new ErrorHandler(500, 'couldnt authenticate')
         }
 
         if (passportUser) {
