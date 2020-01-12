@@ -7,12 +7,11 @@ module.exports = {
       const { user, } = req.body
 
       if (!user.email) {
-        throw new ErrorHandler(404, 'Missing required email and password fields')
+        throw new ErrorHandler(422, 'Missing required email field')
       }
 
       if (!user.password) {
-        let err = new Error('pw required')
-        err.statusCode = 422
+        throw new ErrorHandler(422, 'Missing required password field')
       }
 
       const newUser = await new User(user)
