@@ -1,17 +1,18 @@
-const express = require("express")
-const mongoose = require("mongoose")
-const bodyParser = require("body-parser")
-const morgan = require("morgan")
-const cors = require("cors")
-const helmet = require("helmet")
+const express = require('express')
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+const morgan = require('morgan')
+const cors = require('cors')
+const helmet = require('helmet')
+const { handleError, } = require('./util/error')
 
 //import config
-const config = require("./config")
+const config = require('./config')
 
 
 
 //import router
-const Router = require("./routes")
+const Router = require('./routes')
 
 //create app using express
 const app = express()
@@ -38,10 +39,13 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json())
 
 //HTTP request logger with Morgan
-app.use(morgan("dev"))
+app.use(morgan('dev'))
 
 app.use(Router);
 
+app.use((err, req, res, next) => {
+  handleError(err, res);
+});
 //Listen server to the specific PORT
 app.listen(config.PORT, () => {
   console.log(`listen port ${config.PORT}`)
