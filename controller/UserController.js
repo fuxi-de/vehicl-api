@@ -11,6 +11,10 @@ module.exports = {
         throw new ErrorHandler(422, 'Missing required email field')
       }
 
+      if (!user.name) {
+        throw new ErrorHandler(422, 'Missing required name field')  
+      }
+
       if (!user.password) {
         throw new ErrorHandler(422, 'Missing required password field')
       }
@@ -40,6 +44,10 @@ module.exports = {
 
       if (!user.email) {
         throw new ErrorHandler(422, 'Missing required email field')
+      }
+
+      if (!user.name) {
+        throw new ErrorHandler(422, 'Missing required name field')  
       }
 
       if (!user.password) {

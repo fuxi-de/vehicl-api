@@ -16,7 +16,7 @@ router.post('/login', auth.optional, UserController.login)
 //GET current route (required, only authenticated users have access)
 router.get('/current', auth.required, (req, res, next) => {
   const { payload: { id, }, } = req;
-
+  
   return Users.findById(id)
     .then((user) => {
       if (!user) {
